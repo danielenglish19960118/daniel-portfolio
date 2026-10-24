@@ -48,6 +48,13 @@ An international non-profit portal hub integrating:
 - **Discord:** [Join Community Server](https://discord.gg/AcsQ6DDqPB)
 - **WhatsApp:** [Join Group](https://chat.whatsapp.com/CiwJ88eSR19BPLwrDpsYMN)
 
+
+- 🛡️ **Trust & Safety Security Expert:** Specialized in content moderation algorithms, profanity filtering, and NSFW/harmful content detection mechanisms.
+- 🎓 **Corporate English Curriculum R&D Expert:** Designing bespoke internal English training programs, technical communication frameworks, and advanced vocabulary systems for enterprises and Turtle English.
+- 📜 **Comparative Lexicographer:** Researching historical etymology, Scots cognates, and primary lexicographical sources.
+- 💻 **Tech Stack:** TypeScript, Astro, Node.js, Vercel, and programmatic SEO architectures.
+
+📫 **Contact:** danielenglish19960118@gmail.com
 ---
 
 *© 2026 Yang Cheng-han (楊承翰). All rights reserved.*
