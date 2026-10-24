@@ -67,15 +67,25 @@
     .article-box ul { margin-left: 20px; color: var(--text-muted); margin-bottom: 12px; }
     .article-box li { margin-bottom: 6px; }
 
-    /* 互動審查沙盒 */
-    .sandbox-box { background: rgba(15, 23, 42, 0.9); border: 1px solid var(--border); padding: 20px; border-radius: 10px; margin-top: 14px; }
-    .sandbox-input { width: 100%; background: #0f172a; border: 1px solid var(--border); padding: 12px; border-radius: 8px; color: var(--text-main); font-size: 0.9rem; outline: none; margin-bottom: 10px; resize: vertical; min-height: 80px; }
+    /* 表單區塊樣式 */
+    .contact-form { display: flex; flex-direction: column; gap: 14px; margin-top: 16px; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border); padding: 28px; border-radius: 12px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; text-align: left; }
+    .form-group label { font-size: 0.9rem; color: var(--text-main); font-weight: 500; }
+    .form-control { background-color: #0f172a; border: 1px solid var(--border); border-radius: 8px; padding: 12px; color: var(--text-main); font-size: 0.95rem; outline: none; }
+    .form-control:focus { border-color: var(--accent); }
+    textarea.form-control { min-height: 120px; resize: vertical; }
+    .submit-btn { background: var(--accent); color: #0f172a; border: none; padding: 12px 20px; font-weight: bold; border-radius: 8px; cursor: pointer; font-size: 1rem; transition: 0.2s; }
+    .submit-btn:hover { background: var(--accent-hover); }
+
+    /* 獨立審查沙盒分頁樣式 */
+    .sandbox-page-box { background: rgba(15, 23, 42, 0.9); border: 1px solid var(--border); padding: 28px; border-radius: 12px; margin-top: 16px; }
+    .sandbox-input { width: 100%; background: #0f172a; border: 1px solid var(--border); padding: 14px; border-radius: 8px; color: var(--text-main); font-size: 0.95rem; outline: none; margin-bottom: 14px; resize: vertical; min-height: 120px; }
     .sandbox-input:focus { border-color: var(--accent); }
-    .sandbox-btn { background: var(--accent); color: #0f172a; border: none; padding: 8px 16px; font-weight: bold; border-radius: 6px; cursor: pointer; }
-    .sandbox-result { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 0.88rem; display: none; }
+    .sandbox-btn { background: var(--accent); color: #0f172a; border: none; padding: 10px 20px; font-weight: bold; border-radius: 8px; cursor: pointer; font-size: 0.95rem; }
+    .sandbox-result { margin-top: 14px; padding: 14px; border-radius: 8px; font-size: 0.92rem; display: none; }
 
     .back-btn { display: inline-block; color: var(--accent); text-decoration: none; font-weight: 600; margin-bottom: 16px; cursor: pointer; font-size: 0.9rem; }
-    .footer { text-align: center; border-top: 1px solid var(--border); margin-top: 36px; padding-top: 20px; color: var(--text-muted); font-size: 0.85rem; }
+    .footer { border-top: 1px solid var(--border); margin-top: 36px; padding-top: 20px; text-align: center; color: var(--text-muted); font-size: 0.85rem; }
   </style>
 </head>
 <body>
@@ -85,10 +95,10 @@
       <a onclick="showPage('home')" class="logo">Yang Cheng-han | Portfolio Hub</a>
       <ul class="nav-links">
         <li><a onclick="showPage('home')">Home</a></li>
-        <li><a onclick="showPage('youtube-hub')">YouTube & Licensing Hub</a></li>
-        <li><a onclick="showPage('trust-safety-hub')">Trust & Safety Hub</a></li>
-        <li><a onclick="showPage('curriculum-hub')">Corporate Training Hub</a></li>
-        <li><a onclick="showPage('projects-hub')">Projects Hub</a></li>
+        <li><a onclick="showPage('youtube-hub')">YouTube & Licensing</a></li>
+        <li><a onclick="showPage('trust-safety-hub')">Trust & Safety</a></li>
+        <li><a onclick="showPage('sandbox-page')">Moderation Sandbox</a></li>
+        <li><a onclick="showPage('contact-page')">Contact Form</a></li>
       </ul>
     </nav>
 
@@ -100,7 +110,7 @@
   </div>
 
   <script>
-    // 自動生成 50 個詳細分頁內容的資料庫 (包含 YouTube 內容創作與內容包授權)
+    // 自動生成 50 個詳細分頁內容的資料庫 (包含獨立聯絡表單、獨立審查沙盒與各項模組)
     const pages = {};
 
     // 1. Home 首頁
@@ -145,7 +155,7 @@
           <div class="card" onclick="showPage('mod-16')"><h3>16. Automated Triage Systems</h3><p>Real-time queue scoring and severity grading for platform moderation.</p><span class="btn-link">View Module</span></div>
           <div class="card" onclick="showPage('mod-17')"><h3>17. Spam & Bot Heuristics</h3><p>Network fingerprinting and velocity checking against fraudulent posts.</p><span class="btn-link">View Module</span></div>
           <div class="card" onclick="showPage('mod-18')"><h3>18. Cross-Platform Compliance</h3><p>Adhering to global digital safety standards and regulatory frameworks.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-19')"><h3>19. Live Moderation Sandbox</h3><p>Interactive heuristic testing tool for keyword filtering validation.</p><span class="btn-link">View Module</span></div>
+          <div class="card" onclick="showPage('sandbox-page')"><h3>19. Live Moderation Sandbox</h3><p>Test heuristic filtering in our standalone interactive tool. ↗</p><span class="btn-link" style="background:rgba(56,189,248,0.3);">Launch Sandbox</span></div>
           <div class="card" onclick="showPage('mod-20')"><h3>20. Adversarial Evasion Analysis</h3><p>Countering character substitution and lolspeak bypass tactics.</p><span class="btn-link">View Module</span></div>
           <div class="card" onclick="showPage('mod-21')"><h3>21. Policy Enforcement Matrix</h3><p>Tiered penalty structures from temporary warnings to permanent bans.</p><span class="btn-link">View Module</span></div>
           <div class="card" onclick="showPage('mod-22')"><h3>22. Appeal & Review Workflows</h3><p>Human-in-the-loop escalation paths for disputed moderation flags.</p><span class="btn-link">View Module</span></div>
@@ -183,12 +193,12 @@
           <div class="card" onclick="showPage('mod-42')"><h3>42. World Prayers Archive</h3><p>Real-time UN news converted into intercession prayer directives.</p><span class="btn-link">View Module</span></div>
           <div class="card" onclick="showPage('mod-43')"><h3>43. Digital Sovereignty Advocacy</h3><p>Promoting open-source federated web ecosystems (Mastodon).</p><span class="btn-link">View Module</span></div>
           <div class="card" onclick="showPage('mod-44')"><h3>44. Digital Common Carriers</h3><p>Classifying major digital platforms under public utility models.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-45')"><h3>45. Discord Bot Engineering</h3><p>Building etmo-bot using Node.js and discord.js for lookups.</p><span class="btn-Link">View Module</span></div>
+          <div class="card" onclick="showPage('mod-45')"><h3>45. Discord Bot Engineering</h3><p>Building etmo-bot using Node.js and discord.js for lookups.</p><span class="btn-link">View Module</span></div>
           <div class="card" onclick="showPage('mod-46')"><h3>46. Corporate Governance</h3><p>Serving as a corporate director for a Canadian venture in Taiwan.</p><span class="btn-link">View Module</span></div>
           <div class="card" onclick="showPage('mod-47')"><h3>47. AI Vocabulary Agent Design</h3><p>Tailoring conversational AI models for rigorous vocab acquisition.</p><span class="btn-link">View Module</span></div>
           <div class="card" onclick="showPage('mod-48')"><h3>48. Formspree Sponsor Portal</h3><p>Secure partnership inquiry integration for institutional donors.</p><span class="btn-link">View Module</span></div>
           <div class="card" onclick="showPage('mod-49')"><h3>49. Academic Advisory Tribute</h3><p>Honoring senior linguists and professors like David Crystal.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-50')"><h3>50. Professional Contact & CV</h3><p>Direct outreach channels, email, and social archives.</p><span class="btn-link">View Module</span></div>
+          <div class="card" onclick="showPage('contact-page')"><h3>50. Professional Contact & CV</h3><p>Submit inquiries via our dedicated contact form. ↗</p><span class="btn-link" style="background:rgba(56,189,248,0.3);">Open Contact Form</span></div>
         </div>
       </div>
     `;
@@ -213,22 +223,58 @@
       <div class="article-box">
         <h2>Trust & Safety Security Hub (Modules 13 - 24 Overview)</h2>
         <p>As a Trust & Safety Security Expert, my specialization lies in designing, auditing, and deploying algorithmic and linguistic moderation architectures that safeguard digital platforms against profanity, explicit NSFW content, and toxic hate speech.</p>
+        <p style="margin-top:16px;"><a onclick="showPage('sandbox-page')" class="btn-link">Launch Standalone Moderation Sandbox ↗</a></p>
       </div>
     `;
 
-    pages['curriculum-hub'] = `
+    // 獨立分開的互動審查沙盒分頁 (Standalone Moderation Sandbox Page)
+    pages['sandbox-page'] = `
       <a onclick="showPage('home')" class="back-btn">← Back to Portfolio Home</a>
       <div class="article-box">
-        <h2>Corporate English Training Curriculum Hub (Modules 25 - 36 Overview)</h2>
-        <p>As a Corporate English Training Curriculum Developer, I engineer bespoke enterprise learning programs that empower engineering teams, multinational executives, and support staff to communicate with absolute precision.</p>
+        <h2>Live Trust & Safety Moderation Sandbox</h2>
+        <p>An independent interactive heuristic filtering engine demonstrating real-time detection of profanity, hate speech, and NSFW discourse patterns across digital platforms.</p>
+        
+        <div class="sandbox-page-box">
+          <h3 style="color:var(--gold); margin-bottom:8px; font-size:1.1rem;">Test Moderation Heuristics</h3>
+          <p style="color:var(--text-muted); font-size:0.88rem; margin-bottom:12px;">Type or paste sample text below to test filtering rules and policy compliance:</p>
+          <textarea id="sampleText" class="sandbox-input" placeholder="Enter test sentence (e.g. sample text with flagged keywords like spam or abuse)..."></textarea>
+          <button onclick="runModerationTest()" class="sandbox-btn">Run Security Scan</button>
+          <div id="scanResult" class="sandbox-result"></div>
+        </div>
       </div>
     `;
 
-    pages['projects-hub'] = `
+    // 獨立分開的聯絡表單分頁 (Standalone Contact Form Page)
+    pages['contact-page'] = `
       <a onclick="showPage('home')" class="back-btn">← Back to Portfolio Home</a>
       <div class="article-box">
-        <h2>Lexicography & Open Source Portals Hub (Modules 37 - 50 Overview)</h2>
-        <p>Highlighting open-source web platforms, programmatic SEO architectures (Astro/TypeScript), OED research, and the Christian Multilingual Faith Paradise initiative.</p>
+        <h2>Professional Contact & Business Inquiry Portal</h2>
+        <p>We welcome institutional inquiries regarding <strong>YouTube Content Package Licensing</strong>, <strong>Trust & Safety Security Audits</strong>, <strong>Corporate English Curriculum R&D</strong>, and academic collaborations. Submissions are processed securely via Formspree endpoint.</p>
+        
+        <form action="https://formspree.io/f/myeezkkw" method="POST" class="contact-form">
+          <div class="form-group">
+            <label for="inquiry_type">Inquiry Category</label>
+            <select name="inquiry_type" class="form-control">
+              <option value="YouTube Content Licensing">YouTube Content Package Licensing (內容包授權)</option>
+              <option value="Trust & Safety Security">Trust & Safety Security / Content Moderation</option>
+              <option value="Corporate English Training">Corporate English Training Curriculum R&D</option>
+              <option value="Other Academic Partnership">Other Academic / Professional Partnership</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="name">Your Name / Title</label>
+            <input type="text" name="name" class="form-control" required placeholder="Enter your full name or title">
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" name="email" class="form-control" required placeholder="name@company.com">
+          </div>
+          <div class="form-group">
+            <label for="message">Message / Proposal Details</label>
+            <textarea name="message" class="form-control" required placeholder="Share your project requirements, licensing scope, or consultation inquiry..."></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Send Professional Inquiry</button>
+        </form>
       </div>
     `;
 
@@ -246,15 +292,9 @@
             <li><strong>Quality Assurance:</strong> Continuous auditing, compliance verification, and alignment with international digital media standards.</li>
           </ul>
           ${i === 19 ? `
-            <div class="sandbox-box">
-              <h3 style="color:var(--gold); margin-bottom:8px; font-size:1.05rem;">Interactive Moderation Sandbox (Module 19 Live Demo)</h3>
-              <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:10px;">Test sample text against content moderation heuristics:</p>
-              <textarea id="sampleText" class="sandbox-input" placeholder="Type test sentence here..."></textarea>
-              <button onclick="runModerationTest()" class="sandbox-btn">Run Security Scan</button>
-              <div id="scanResult" class="sandbox-result"></div>
-            </div>
+            <p style="margin-top:16px;"><a onclick="showPage('sandbox-page')" class="btn-link">Launch Live Moderation Sandbox for this module ↗</a></p>
           ` : `
-            <p>For further inquiries regarding this specific module, content licensing proposals, or collaboration, please reach out directly via email at <a href="mailto:danielenglish19960118@gmail.com" style="color:var(--accent);">danielenglish19960118@gmail.com</a>.</p>
+            <p style="margin-top:16px;">For further inquiries regarding this specific module or collaboration proposals, please visit our <a onclick="showPage('contact-page')" style="color:var(--accent); cursor:pointer;">Contact Form Page</a> or reach out directly at <a href="mailto:danielenglish19960118@gmail.com" style="color:var(--accent);">danielenglish19960118@gmail.com</a>.</p>
           `}
         </div>
       `;
@@ -272,7 +312,7 @@
       }
     }
 
-    // 模組 19 的互動審查沙盒測試函式
+    // 獨立沙盒分頁的測試執行函式
     function runModerationTest() {
       const text = document.getElementById('sampleText').value.toLowerCase();
       const resultDiv = document.getElementById('scanResult');
