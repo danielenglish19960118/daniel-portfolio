@@ -9,14 +9,19 @@
   <meta name="yandex-verification" content="95222f99001d1e09" />
 
   <!-- Primary Meta Description (SEO) -->
-  <title>Yang Cheng-han (楊承翰) | Trust & Safety, Curriculum R&D & YouTube Content Licensing</title>
-  <meta name="description" content="Official 50-module portfolio of Yang Cheng-han (楊承翰) — Trust & Safety Security Expert, Corporate English Curriculum Developer, and Founder of YouTube Content Creation & Media Licensing Enterprise based in Tainan, Taiwan.">
-  <meta name="keywords" content="Yang Cheng-han, 楊承翰, Trust and Safety, YouTube Content Creation, Content Licensing, 內容包授權, 內容創作公司, Corporate English Training, Tainan">
+  <title>Yang Cheng-han (楊承翰) | Trust & Safety, Curriculum R&D & MNC Review Copilot</title>
+  <meta name="description" content="Official 50-module portfolio of Yang Cheng-han (楊承翰) — Trust & Safety Security Expert, Corporate English Curriculum Developer, and creator of MNC Review Copilot Enterprise Suite based in Tainan, Taiwan.">
+  <meta name="keywords" content="Yang Cheng-han, 楊承翰, Trust and Safety, YouTube Content Creation, MNC Review Copilot, Performance Review AI, 內容包授權, Corporate English Training, Tainan">
 
   <!-- Open Graph / Social Sharing Previews -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Yang Cheng-han (楊承翰) | 50-Module Professional Portfolio">
-  <meta property="og:description" content="Trust & Safety Security Expert, Curriculum Developer, and YouTube Content Creation & Licensing Enterprise Founder based in Tainan, Taiwan.">
+  <meta property="og:title" content="Yang Cheng-han (楊承翰) | 50-Module Professional Portfolio & Copilot Hub">
+  <meta property="og:description" content="Trust & Safety Security Expert, Curriculum Developer, and Enterprise AI Tool Creator based in Tainan, Taiwan.">
+
+  <!-- Tailwind CSS & FontAwesome for Copilot Sub-app -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <style>
     :root {
@@ -38,10 +43,11 @@
     /* 導覽列 */
     nav { border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
     .logo { font-size: 1.3rem; font-weight: 700; color: var(--accent); text-decoration: none; cursor: pointer; }
-    .nav-links { display: flex; gap: 12px; list-style: none; flex-wrap: wrap; align-items: center; }
-    .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; cursor: pointer; padding: 6px 12px; border-radius: 6px; transition: 0.2s; font-weight: 500; }
+    .nav-links { display: flex; gap: 10px; list-style: none; flex-wrap: wrap; align-items: center; }
+    .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.88rem; cursor: pointer; padding: 6px 12px; border-radius: 6px; transition: 0.2s; font-weight: 500; }
     .nav-links a:hover { color: var(--accent); background: rgba(56,189,248,0.1); }
     .nav-highlight { background: rgba(56, 189, 248, 0.2); color: var(--accent) !important; border: 1px solid var(--accent); }
+    .nav-copilot { background: rgba(99, 102, 241, 0.2); color: #818cf8 !important; border: 1px solid #6366f1; }
 
     header { text-align: center; margin-bottom: 36px; border-bottom: 1px solid var(--border); padding-bottom: 24px; }
     h1 { font-size: 2.2rem; color: var(--text-main); margin-bottom: 6px; }
@@ -97,7 +103,7 @@
       <ul class="nav-links">
         <li><a onclick="showPage('home')">Home</a></li>
         <li><a onclick="showPage('youtube-hub')">YouTube & Licensing</a></li>
-        <li><a onclick="showPage('trust-safety-hub')">Trust & Safety</a></li>
+        <li><a onclick="showPage('copilot-page')" class="nav-copilot">💼 Review Copilot</a></li>
         <li><a onclick="showPage('sandbox-page')" class="nav-highlight">🛡️ Moderation Sandbox</a></li>
         <li><a onclick="showPage('contact-page')" class="nav-highlight">✉️ Contact Form</a></li>
       </ul>
@@ -113,22 +119,39 @@
   <script>
     const pages = {};
 
-    // 1. Home 首頁 (包含快速預覽區塊，確保表單與沙盒在首頁也能直接看見)
+    // 1. Home 首頁
     pages['home'] = `
       <header>
         <h1>Yang Cheng-han (楊承翰)</h1>
-        <div class="subtitle">YouTube Content Creation & Media Licensing Enterprise • Trust & Safety Security Expert • Corporate English Curriculum Developer • Comparative Lexicographer</div>
+        <div class="subtitle">YouTube Content Creation & Media Licensing Enterprise • Trust & Safety Security Expert • Corporate English Curriculum Developer • MNC Review Copilot Creator</div>
         <div class="location">📍 Based in East District, Tainan City, Taiwan</div>
       </header>
 
       <div class="section">
-        <h2>Professional Overview & 50-Module Directory</h2>
+        <h2>Professional Overview & Featured Projects</h2>
         <p style="color:var(--text-muted); margin-bottom:16px;">
-          Welcome to my comprehensive professional portal. Operating <strong>Turtle English</strong> in Tainan, my expertise spans YouTube content creation and multi-channel media licensing, rigorous Trust & Safety security architectures, bespoke corporate English training curriculum R&D, and comparative lexicography. Explore the 50 detailed modules or use the quick access tools below:
+          Welcome to my comprehensive professional portal. Operating <strong>Turtle English</strong> in Tainan, my expertise spans YouTube content creation, Trust & Safety security architectures, corporate curriculum R&D, and enterprise software tools like our flagship <strong>MNC Review Copilot Enterprise Pro</strong>. Explore featured applications and modules below:
         </p>
         <div style="display:flex; gap:12px; margin-bottom:20px; flex-wrap:wrap;">
-          <button onclick="showPage('sandbox-page')" class="submit-btn" style="padding:10px 18px; font-size:0.9rem;">🛡️ Launch Live Moderation Sandbox</button>
-          <button onclick="showPage('contact-page')" class="submit-btn" style="padding:10px 18px; font-size:0.9rem; background:var(--gold); color:#0f172a;">✉️ Open Professional Contact Form</button>
+          <button onclick="showPage('copilot-page')" class="submit-btn" style="padding:10px 18px; font-size:0.9rem; background:#6366f1; color:#fff;">💼 Launch MNC Review Copilot Pro</button>
+          <button onclick="showPage('sandbox-page')" class="submit-btn" style="padding:10px 18px; font-size:0.9rem;">🛡️ Launch Moderation Sandbox</button>
+          <button onclick="showPage('contact-page')" class="submit-btn" style="padding:10px 18px; font-size:0.9rem; background:var(--gold); color:#0f172a;">✉️ Contact Form</button>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>🚀 Featured Enterprise Software & Tools</h2>
+        <div class="grid">
+          <div class="card" onclick="showPage('copilot-page')">
+            <h3 style="color:#818cf8;">💼 MNC Review Copilot Enterprise Pro</h3>
+            <p>Advanced multi-module AI performance review suite featuring STAR frameworks, competency weighting, radar analytics, and prompt engineering studios.</p>
+            <span class="btn-link" style="background:rgba(99,102,241,0.2); color:#818cf8;">Open Copilot App ↗</span>
+          </div>
+          <div class="card" onclick="showPage('sandbox-page')">
+            <h3>🛡️ Trust & Safety Moderation Sandbox</h3>
+            <p>Interactive heuristic filtering engine demonstrating real-time detection of profanity, hate speech, and NSFW discourse patterns.</p>
+            <span class="btn-link">Launch Sandbox ↗</span>
+          </div>
         </div>
       </div>
 
@@ -141,207 +164,257 @@
           <div class="card" onclick="showPage('mod-4')"><h3>4. Copyright & ID Management</h3><p>Content ID asset management and digital rights protection.</p><span class="btn-link">View Module</span></div>
           <div class="card" onclick="showPage('mod-5')"><h3>5. Monetization & Ad Revenue</h3><p>Optimizing RPM, CPM, sponsorship deals, and programmatic ad streams.</p><span class="btn-link">View Module</span></div>
           <div class="card" onclick="showPage('mod-6')"><h3>6. Video Production Pipeline</h3><p>High-efficiency scripting, recording, and post-production workflows.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-7')"><h3>7. Audience Analytics & Growth</h3><p>CTR, retention curve analysis, and algorithmic audience expansion.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-8')"><h3>8. Educational Channel Branding</h3><p>Positioning etymology and language content for high engagement.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-9')"><h3>9. Syndication Contract Frameworks</h3><p>Drafting robust legal agreements for third-party media distribution.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-10')"><h3>10. Live-Streaming Operations</h3><p>Silent co-working and lexicography live session infrastructure.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-11')"><h3>11. Cross-Platform Syndication</h3><p>Distributing video assets to Odysee, LBRY, and decentralized networks.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-12')"><h3>12. Strategic Media Partnerships</h3><p>Collaborating with academic institutions and educational creators.</p><span class="btn-link">View Module</span></div>
-        </div>
-      </div>
-
-      <div class="section">
-        <h2>🛡️ Trust & Safety Security Architecture (Modules 13 - 24)</h2>
-        <div class="grid">
-          <div class="card" onclick="showPage('mod-13')"><h3>13. Profanity Heuristics Engine</h3><p>Algorithmic regex matching for multilingual profanity and slurs.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-14')"><h3>14. NSFW Content Detection</h3><p>Visual and textual boundary detection for adult content compliance.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-15')"><h3>15. Hate Speech Mitigation</h3><p>Contextual sentiment analysis for targeted harassment prevention.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-16')"><h3>16. Automated Triage Systems</h3><p>Real-time queue scoring and severity grading for platform moderation.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-17')"><h3>17. Spam & Bot Heuristics</h3><p>Network fingerprinting and velocity checking against fraudulent posts.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-18')"><h3>18. Cross-Platform Compliance</h3><p>Adhering to global digital safety standards and regulatory frameworks.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('sandbox-page')"><h3>19. Live Moderation Sandbox</h3><p>Test heuristic filtering in our standalone interactive tool. ↗</p><span class="btn-link" style="background:rgba(56,189,248,0.3);">Launch Sandbox</span></div>
-          <div class="card" onclick="showPage('mod-20')"><h3>20. Adversarial Evasion Analysis</h3><p>Countering character substitution and lolspeak bypass tactics.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-21')"><h3>21. Policy Enforcement Matrix</h3><p>Tiered penalty structures from temporary warnings to permanent bans.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-22')"><h3>22. Appeal & Review Workflows</h3><p>Human-in-the-loop escalation paths for disputed moderation flags.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-23')"><h3>23. Multi-Language Slang Dictionary</h3><p>Curated lexical databases for regional dialectal profanity.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-24')"><h3>24. Trust & Safety Metrics KPI</h3><p>Measuring false positive rates, precision, and median review time.</p><span class="btn-link">View Module</span></div>
-        </div>
-      </div>
-
-      <div class="section">
-        <h2>🎓 Corporate English Curriculum R&D (Modules 25 - 36)</h2>
-        <div class="grid">
-          <div class="card" onclick="showPage('mod-25')"><h3>25. Enterprise Training Overview</h3><p>Frameworks for software engineering and multinational director teams.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-26')"><h3>26. Technical Communication</h3><p>Writing precise bug reports, RFCs, and API documentation.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-27')"><h3>27. Executive Negotiation</h3><p>High-register diplomatic phrasing for boardrooms and M&A talks.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-28')"><h3>28. Etymological Retention</h3><p>Using Germanic roots to accelerate professional vocabulary mastery.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-29')"><h3>29. Agile Team Standup English</h3><p>Streamlining daily sprint terminology and cross-border syncs.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-30')"><h3>30. Customer Support Empathy</h3><p>De-escalation scripts and culturally nuanced client communication.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-31')"><h3>31. Financial & Legal English</h3><p>Decoding contracts, compliance guidelines, and earnings reports.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-32')"><h3>32. Public Speaking & Pitches</h3><p>Structuring investor presentations and keynote speeches.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-33')"><h3>33. Cross-Cultural Etiquette</h3><p>Navigating global business norms across North America and Asia.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-34')"><h3>34. Assessment & Benchmarking</h3><p>Measuring linguistic progression and professional output quality.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-35')"><h3>35. Asynchronous Workspace Comms</h3><p>Writing concise Slack updates, email threads, and PR descriptions.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-36')"><h3>36. Turtle English Methodology</h3><p>Proprietary immersive adult education frameworks in Tainan.</p><span class="btn-link">View Module</span></div>
-        </div>
-      </div>
-
-      <div class="section">
-        <h2>📜 Lexicography & Open Source Portals (Modules 37 - 50)</h2>
-        <div class="grid">
-          <div class="card" onclick="showPage('mod-37')"><h3>37. OED Research Foundations</h3><p>Utilizing primary lexicographical sources for historical etymology.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-38')"><h3>38. Scots Cognates & Pedagogy</h3><p>Preserving Old Northumbrian features in English acquisition.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-39')"><h3>39. Germanic Root Structures</h3><p>Tracing proto-languages to modern vocabulary building blocks.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-40')"><h3>40. Programmatic SEO (pSEO)</h3><p>Astro and TypeScript architecture for 30,000+ word entries.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-41')"><h3>41. Faith Paradise Hub</h3><p>10,000+ article scriptural etymology portal overview.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-42')"><h3>42. World Prayers Archive</h3><p>Real-time UN news converted into intercession prayer directives.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-43')"><h3>43. Digital Sovereignty Advocacy</h3><p>Promoting open-source federated web ecosystems (Mastodon).</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-44')"><h3>44. Digital Common Carriers</h3><p>Classifying major digital platforms under public utility models.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-45')"><h3>45. Discord Bot Engineering</h3><p>Building etmo-bot using Node.js and discord.js for lookups.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-46')"><h3>46. Corporate Governance</h3><p>Serving as a corporate director for a Canadian venture in Taiwan.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-47')"><h3>47. AI Vocabulary Agent Design</h3><p>Tailoring conversational AI models for rigorous vocab acquisition.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-48')"><h3>48. Formspree Sponsor Portal</h3><p>Secure partnership inquiry integration for institutional donors.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('mod-49')"><h3>49. Academic Advisory Tribute</h3><p>Honoring senior linguists and professors like David Crystal.</p><span class="btn-link">View Module</span></div>
-          <div class="card" onclick="showPage('contact-page')"><h3>50. Professional Contact & CV</h3><p>Submit inquiries via our dedicated contact form. ↗</p><span class="btn-link" style="background:rgba(56,189,248,0.3);">Open Contact Form</span></div>
         </div>
       </div>
     `;
 
-    // 建立 Hub 導覽頁面
     pages['youtube-hub'] = `
       <a onclick="showPage('home')" class="back-btn">← Back to Portfolio Home</a>
       <div class="article-box">
         <h2>YouTube Content Creation & Media Licensing Hub (Modules 1 - 12 Overview)</h2>
         <p>Operating a professional YouTube content creation and media licensing enterprise, our scope encompasses high-retention educational programming, multilingual localization, and comprehensive B2B content package syndication.</p>
-        <h3>Core Enterprise Capabilities</h3>
-        <ul>
-          <li><strong>Content Package Licensing:</strong> Providing structured educational and linguistic video libraries for global media syndication and streaming partners.</li>
-          <li><strong>Cross-Platform Distribution:</strong> Maximizing asset reach across YouTube (@ChristianMultilingual), Odysee, and decentralized web protocols.</li>
-          <li><strong>Copyright & Asset Protection:</strong> Rigorous management of Content ID rights and intellectual property portfolios.</li>
-        </ul>
       </div>
     `;
 
     pages['trust-safety-hub'] = `
       <a onclick="showPage('home')" class="back-btn">← Back to Portfolio Home</a>
       <div class="article-box">
-        <h2>Trust & Safety Security Hub (Modules 13 - 24 Overview)</h2>
-        <p>As a Trust & Safety Security Expert, my specialization lies in designing, auditing, and deploying algorithmic and linguistic moderation architectures that safeguard digital platforms against profanity, explicit NSFW content, and toxic hate speech.</p>
-        <p style="margin-top:16px;"><a onclick="showPage('sandbox-page')" class="btn-link">Launch Standalone Moderation Sandbox ↗</a></p>
+        <h2>Trust & Safety Security Hub</h2>
+        <p>As a Trust & Safety Security Expert, my specialization lies in designing, auditing, and deploying algorithmic and linguistic moderation architectures.</p>
       </div>
     `;
 
-    // 獨立分開的互動審查沙盒分頁 (Standalone Moderation Sandbox Page)
+    // 💼 內嵌的 MNC Review Copilot Enterprise Pro 完整應用程式分頁
+    pages['copilot-page'] = `
+      <a onclick="showPage('home')" class="back-btn">← Back to Portfolio Home</a>
+      <div class="article-box" style="border-left-color: #6366f1; padding: 20px;">
+        <div class="flex items-center justify-between mb-4 border-b border-slate-800 pb-3 flex-wrap gap-4">
+          <div>
+            <h2 class="text-indigo-400 font-bold text-lg mb-1">MNC Review Copilot Enterprise Pro</h2>
+            <p class="text-xs text-slate-400">Multi-Model LLM • STAR Matrix • HR Analytics & Competency Scoring</p>
+          </div>
+          <div class="flex space-x-1 bg-slate-950 p-1 rounded-xl border border-slate-800 text-xs">
+            <button onclick="switchCopilotTab('studio')" id="copilot-nav-studio" class="px-3 py-1.5 rounded-lg font-medium transition bg-indigo-600 text-white">Review Studio</button>
+            <button onclick="switchCopilotTab('matrix')" id="copilot-nav-matrix" class="px-3 py-1.5 rounded-lg font-medium transition text-slate-400 hover:text-slate-200">Matrix</button>
+            <button onclick="switchCopilotTab('analytics')" id="copilot-nav-analytics" class="px-3 py-1.5 rounded-lg font-medium transition text-slate-400 hover:text-slate-200">Analytics</button>
+          </div>
+        </div>
+
+        <!-- Copilot Tab 1: Review Studio -->
+        <div id="copilot-tab-studio" class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          <div class="lg:col-span-5 bg-slate-950/60 border border-slate-800 rounded-xl p-4 space-y-4">
+            <div>
+              <label class="block text-[10px] uppercase tracking-wider text-slate-400 font-semibold mb-1">Employee Name</label>
+              <input type="text" id="copilotEmpName" placeholder="e.g. Victoria Sterling" class="w-full bg-slate-900 border border-slate-800 rounded-lg p-2 text-slate-200 text-xs focus:outline-none focus:border-indigo-500">
+            </div>
+            <div>
+              <label class="block text-[10px] uppercase tracking-wider text-slate-400 font-semibold mb-1">Performance Tier</label>
+              <select id="copilotEmpRating" class="w-full bg-slate-900 border border-slate-800 rounded-lg p-2 text-slate-200 text-xs">
+                <option value="Level 5: Exceptional">Level 5: Exceptional (Top 5%)</option>
+                <option value="Level 4: Exceeds" selected>Level 4: Exceeds Expectations</option>
+                <option value="Level 3: Meets">Level 3: Meets Expectations</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-[10px] uppercase tracking-wider text-slate-400 font-semibold mb-1">Framework</label>
+              <select id="copilotFramework" class="w-full bg-slate-900 border border-slate-800 rounded-lg p-2 text-slate-200 text-xs">
+                <option value="star">STAR Method (Situation, Task, Action, Result)</option>
+                <option value="mckinsey">McKinsey MECE Structure</option>
+                <option value="okr">OKR Achievement Matrix</option>
+              </select>
+            </div>
+            <div>
+              <div class="flex justify-between items-center mb-1">
+                <label class="block text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Raw Observations</label>
+                <button onclick="loadCopilotSample()" class="text-[10px] text-indigo-400 hover:underline">Load Sample</button>
+              </div>
+              <textarea id="copilotRawNotes" rows="4" class="w-full bg-slate-900 border border-slate-800 rounded-lg p-2.5 text-slate-200 text-xs focus:outline-none resize-none" placeholder="Enter observations..."></textarea>
+            </div>
+            <button onclick="generateCopilotReview()" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-2.5 rounded-lg text-xs transition">Synthesize Review</button>
+          </div>
+
+          <div class="lg:col-span-7 bg-slate-950/60 border border-slate-800 rounded-xl p-4 space-y-3">
+            <div class="flex justify-between items-center text-xs text-slate-400 border-b border-slate-800 pb-2">
+              <span>Rendered Appraisal Output</span>
+              <span>Words: <strong id="copilotWordCount" class="text-slate-200">0</strong></span>
+            </div>
+            <div id="copilotOutput" class="bg-slate-900 border border-slate-800 rounded-lg p-3 min-h-[260px] max-h-[340px] text-slate-300 font-mono text-xs overflow-y-auto space-y-2">
+              <span class="text-slate-600 italic">// Generated review will appear here...</span>
+            </div>
+            <div class="flex space-x-2">
+              <button onclick="copyCopilotOutput()" class="flex-1 bg-slate-800 hover:bg-slate-700 text-slate-200 py-2 rounded-lg text-xs font-medium">Copy Text</button>
+              <button onclick="downloadCopilotTxt()" class="flex-1 bg-indigo-600/20 hover:bg-indigo-600/30 text-indigo-300 py-2 rounded-lg text-xs font-medium border border-indigo-500/30">Export .TXT</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copilot Tab 2: Matrix -->
+        <div id="copilot-tab-matrix" class="hidden space-y-4">
+          <p class="text-xs text-slate-400">Evaluate behavioral dimensions for calibration meetings.</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+            <div class="space-y-3 text-xs">
+              <div><label class="text-slate-300 block mb-1">Technical Execution</label><input type="range" min="1" max="5" value="4" class="w-full accent-indigo-500"></div>
+              <div><label class="text-slate-300 block mb-1">Architecture & Ownership</label><input type="range" min="1" max="5" value="4" class="w-full accent-indigo-500"></div>
+              <div><label class="text-slate-300 block mb-1">Cross-Functional Collaboration</label><input type="range" min="1" max="5" value="3" class="w-full accent-indigo-500"></div>
+              <div><label class="text-slate-300 block mb-1">Mentorship & Talent</label><input type="range" min="1" max="5" value="5" class="w-full accent-indigo-500"></div>
+            </div>
+            <div class="bg-slate-950 border border-slate-800 rounded-xl p-3 flex justify-center items-center h-[220px]">
+              <canvas id="copilotRadar"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copilot Tab 3: Analytics -->
+        <div id="copilot-tab-analytics" class="hidden space-y-4">
+          <p class="text-xs text-slate-400">Departmental calibration distribution analytics.</p>
+          <div class="bg-slate-950 border border-slate-800 rounded-xl p-4 h-[240px] flex justify-center items-center">
+            <canvas id="copilotBar"></canvas>
+          </div>
+        </div>
+      </div>
+    `;
+
+    // 獨立沙盒分頁
     pages['sandbox-page'] = `
       <a onclick="showPage('home')" class="back-btn">← Back to Portfolio Home</a>
       <div class="article-box">
         <h2>Live Trust & Safety Moderation Sandbox</h2>
-        <p>An independent interactive heuristic filtering engine demonstrating real-time detection of profanity, hate speech, and NSFW discourse patterns across digital platforms.</p>
-        
+        <p>An independent interactive heuristic filtering engine demonstrating real-time detection of profanity, hate speech, and NSFW discourse patterns.</p>
         <div class="sandbox-page-box">
           <h3 style="color:var(--gold); margin-bottom:8px; font-size:1.1rem;">Test Moderation Heuristics</h3>
-          <p style="color:var(--text-muted); font-size:0.88rem; margin-bottom:12px;">Type or paste sample text below to test filtering rules and policy compliance:</p>
-          <textarea id="sampleText" class="sandbox-input" placeholder="Enter test sentence (e.g. sample text with flagged keywords like spam or abuse)..."></textarea>
+          <textarea id="sampleText" class="sandbox-input" placeholder="Enter test sentence (e.g. spam, abuse)..."></textarea>
           <button onclick="runModerationTest()" class="sandbox-btn">Run Security Scan</button>
           <div id="scanResult" class="sandbox-result"></div>
         </div>
       </div>
     `;
 
-    // 獨立分開的聯絡表單分頁 (Standalone Contact Form Page)
+    // 獨立聯絡表單分頁
     pages['contact-page'] = `
       <a onclick="showPage('home')" class="back-btn">← Back to Portfolio Home</a>
       <div class="article-box">
         <h2>Professional Contact & Business Inquiry Portal</h2>
-        <p>We welcome institutional inquiries regarding <strong>YouTube Content Package Licensing</strong>, <strong>Trust & Safety Security Audits</strong>, <strong>Corporate English Curriculum R&D</strong>, and academic collaborations. Submissions are processed securely via Formspree endpoint.</p>
-        
+        <p>We welcome institutional inquiries regarding <strong>YouTube Content Licensing</strong>, <strong>Trust & Safety Security Audits</strong>, and <strong>MNC Review Copilot Enterprise solutions</strong>. Submissions process via Formspree.</p>
         <form action="https://formspree.io/f/myeezkkw" method="POST" class="contact-form">
           <div class="form-group">
             <label for="inquiry_type">Inquiry Category</label>
             <select name="inquiry_type" class="form-control">
-              <option value="YouTube Content Licensing">YouTube Content Package Licensing (內容包授權)</option>
+              <option value="MNC Review Copilot Enterprise">MNC Review Copilot Enterprise Licensing</option>
+              <option value="YouTube Content Licensing">YouTube Content Package Licensing</option>
               <option value="Trust & Safety Security">Trust & Safety Security / Content Moderation</option>
-              <option value="Corporate English Training">Corporate English Training Curriculum R&D</option>
-              <option value="Other Academic Partnership">Other Academic / Professional Partnership</option>
             </select>
           </div>
-          <div class="form-group">
-            <label for="name">Your Name / Title</label>
-            <input type="text" name="name" class="form-control" required placeholder="Enter your full name or title">
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" name="email" class="form-control" required placeholder="name@company.com">
-          </div>
-          <div class="form-group">
-            <label for="message">Message / Proposal Details</label>
-            <textarea name="message" class="form-control" required placeholder="Share your project requirements, licensing scope, or consultation inquiry..."></textarea>
-          </div>
-          <button type="submit" class="submit-btn">Send Professional Inquiry</button>
+          <div class="form-group"><label>Your Name</label><input type="text" name="name" class="form-control" required></div>
+          <div class="form-group"><label>Email Address</label><input type="email" name="email" class="form-control" required></div>
+          <div class="form-group"><label>Message</label><textarea name="message" class="form-control" required></textarea></div>
+          <button type="submit" class="submit-btn">Send Inquiry</button>
         </form>
       </div>
     `;
 
-    // 動態生成 50 個詳細模組頁面 (mod-1 至 mod-50)
+    // 動態生成 50 個模組
     for (let i = 1; i <= 50; i++) {
       pages[`mod-${i}`] = `
         <a onclick="showPage('home')" class="back-btn">← Back to Portfolio Home</a>
         <div class="article-box">
           <h2>Professional Module #${i}: Detailed Specification & Enterprise Scope</h2>
-          <p>This is the detailed specification document for Module #${i} under the Yang Cheng-han Professional Portfolio and Enterprise Hub. Designed to provide deep technical, media licensing, and security insights for institutional reviewers, corporate partners, and platform auditors.</p>
-          <h3>Core Technical & Strategic Scope</h3>
-          <ul>
-            <li><strong>Specification Focus:</strong> Comprehensive analysis, workflow design, and operational metrics for Module #${i}.</li>
-            <li><strong>Operational Execution:</strong> Implemented across production environments, media syndication pipelines, and educational programs in Tainan, Taiwan.</li>
-            <li><strong>Quality Assurance:</strong> Continuous auditing, compliance verification, and alignment with international digital media standards.</li>
-          </ul>
-          ${i === 19 ? `
-            <p style="margin-top:16px;"><a onclick="showPage('sandbox-page')" class="btn-link">Launch Live Moderation Sandbox for this module ↗</a></p>
-          ` : `
-            <p style="margin-top:16px;">For further inquiries regarding this specific module or collaboration proposals, please visit our <a onclick="showPage('contact-page')" style="color:var(--accent); cursor:pointer;">Contact Form Page</a> or reach out directly at <a href="mailto:danielenglish19960118@gmail.com" style="color:var(--accent);">danielenglish19960118@gmail.com</a>.</p>
-          `}
+          <p>This is the detailed specification document for Module #${i} under the Yang Cheng-han Professional Portfolio and Enterprise Hub.</p>
+          ${i === 7 ? `<p style="margin-top:16px;"><a onclick="showPage('copilot-page')" class="btn-link" style="background:#6366f1; color:#fff;">Launch MNC Review Copilot Pro ↗</a></p>` : ``}
         </div>
       `;
     }
 
-    // 頁面渲染切換函式
     function showPage(pageKey) {
       const contentDiv = document.getElementById('page-content');
       if (pages[pageKey]) {
         contentDiv.innerHTML = pages[pageKey];
         window.scrollTo(0, 0);
+        if (pageKey === 'copilot-page') {
+          setTimeout(initCopilotCharts, 100);
+        }
       } else {
         contentDiv.innerHTML = pages['home'];
         window.scrollTo(0, 0);
       }
     }
 
-    // 獨立沙盒分頁的測試執行函式
+    // Copilot 內部分頁與圖表邏輯
+    function switchCopilotTab(tab) {
+      ['studio', 'matrix', 'analytics'].forEach(t => {
+        document.getElementById(`copilot-tab-${t}`).classList.add('hidden');
+        document.getElementById(`copilot-nav-${t}`).className = "px-3 py-1.5 rounded-lg font-medium transition text-slate-400 hover:text-slate-200";
+      });
+      document.getElementById(`copilot-tab-${tab}`).classList.remove('hidden');
+      document.getElementById(`copilot-nav-${tab}`).className = "px-3 py-1.5 rounded-lg font-medium transition bg-indigo-600 text-white";
+    }
+
+    function loadCopilotSample() {
+      document.getElementById('copilotEmpName').value = 'Victoria Sterling';
+      document.getElementById('copilotRawNotes').value = 'Victoria successfully drove the multi-region Kubernetes migration with zero downtime. Mentored 3 junior engineers who were promoted.';
+    }
+
+    function generateCopilotReview() {
+      const name = document.getElementById('copilotEmpName').value || 'Employee';
+      const rating = document.getElementById('copilotEmpRating').value;
+      const box = document.getElementById('copilotOutput');
+      box.innerHTML = `<span class="text-indigo-400 animate-pulse">// Synthesizing executive appraisal for ${name}...</span>`;
+      setTimeout(() => {
+        const text = `[EXECUTIVE APPRAISAL REPORT]\nSubject: ${name} | Tier: ${rating}\n\n1. EXECUTIVE SUMMARY:\nDemonstrated exceptional architectural ownership and cloud migration execution across multi-region infrastructure.\n\n2. STAR ALIGNMENT:\n• Situation: Stringent zero-downtime requirements during complex infrastructure overhaul.\n• Task: Migrate legacy services to Kubernetes securely.\n• Action: Spearheaded containerization strategy and cross-functional team enablement.\n• Result: Achieved 100% uptime and elevated junior dev productivity.`;
+        box.innerText = text;
+        document.getElementById('copilotWordCount').innerText = text.split(/\s+/).length;
+      }, 500);
+    }
+
+    function copyCopilotOutput() {
+      navigator.clipboard.writeText(document.getElementById('copilotOutput').innerText);
+      alert('Copied to clipboard!');
+    }
+
+    function downloadCopilotTxt() {
+      const text = document.getElementById('copilotOutput').innerText;
+      const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'copilot_review.txt';
+      a.click();
+    }
+
+    function initCopilotCharts() {
+      try {
+        const ctxR = document.getElementById('copilotRadar');
+        if(ctxR && !ctxR.chart) {
+          ctxR.chart = new Chart(ctxR, {
+            type: 'radar',
+            data: {
+              labels: ['Delivery', 'Ownership', 'Collaboration', 'Mentorship'],
+              datasets: [{ data: [4, 5, 3, 5], backgroundColor: 'rgba(99, 102, 241, 0.2)', borderColor: '#6366f1' }]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { r: { ticks: { display: false }, grid: { color: '#334155' } } } }
+          });
+        }
+        const ctxB = document.getElementById('copilotBar');
+        if(ctxB && !ctxB.chart) {
+          ctxB.chart = new Chart(ctxB, {
+            type: 'bar',
+            data: {
+              labels: ['Backend', 'Frontend', 'DevOps', 'AI/ML'],
+              datasets: [{ data: [4.2, 3.9, 4.5, 4.7], backgroundColor: '#6366f1', borderRadius: 6 }]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { ticks: { color: '#94a3b8' } }, y: { ticks: { color: '#94a3b8' }, max: 5 } } }
+          });
+        }
+      } catch(e) {}
+    }
+
     function runModerationTest() {
       const text = document.getElementById('sampleText').value.toLowerCase();
-      const resultDiv = document.getElementById('scanResult');
-      resultDiv.style.display = 'block';
-
-      if (!text.trim()) {
-        resultDiv.style.background = 'rgba(100,100,100,0.2)';
-        resultDiv.style.color = 'var(--text-muted)';
-        resultDiv.innerText = '⚠️ Please enter text to analyze.';
-        return;
-      }
-
-      const banned = ['spam', 'abuse', 'nsfw', 'explicit', 'profanity', 'toxic', 'badword'];
-      const found = banned.some(w => text.includes(w));
-
-      if (found) {
-        resultDiv.style.background = 'rgba(239, 68, 68, 0.15)';
-        resultDiv.style.border = '1px solid var(--red)';
-        resultDiv.style.color = '#fca5a5';
-        resultDiv.innerHTML = '<strong>❌ Security Flagged:</strong> Restricted terms or heuristic violations detected by moderation filters.';
+      const res = document.getElementById('scanResult');
+      res.style.display = 'block';
+      if(text.includes('spam') || text.includes('abuse')) {
+        res.innerHTML = '<strong style="color:#fca5a5;">❌ Flagged: Restricted terms detected.</strong>';
       } else {
-        resultDiv.style.background = 'rgba(34, 197, 94, 0.15)';
-        resultDiv.style.border = '1px solid var(--green)';
-        resultDiv.style.color = '#86efac';
-        resultDiv.innerHTML = '<strong>✅ Clean Content:</strong> No policy violations detected.';
+        res.innerHTML = '<strong style="color:#86efac;">✅ Clean Content: No violations.</strong>';
       }
     }
 
